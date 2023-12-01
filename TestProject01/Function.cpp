@@ -52,8 +52,9 @@ Node* HuffManTree::getMinNode(std::vector<Node*>&vec){
 void HuffManTree:: buildHuffManTree(char ch[],double freq[],int size){
     //构建Node*数组
     std::vector<Node*>vec;
-    for(int i=0;i<size;i++)
+    for(int i=0;i<size;i++){
         vec.push_back(new Node(ch[i],freq[i]));
+    }
     while(vec.size()!=1){
         //寻找freq最小的两个Node
         Node* node1 = HuffManTree::getMinNode(vec);
